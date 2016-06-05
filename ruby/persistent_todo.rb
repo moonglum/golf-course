@@ -1,6 +1,6 @@
-# ruby -rpstore -ne'(s=PStore.new ?a).transaction{a,c,j=s[0]||[],$_.to_i,0;puts "\e[2J",(s[0]=c>0?a-[a[c-1]]:a<<$_).map{|i|"#{j+=1}: #{i}"}}'
-
-require 'pstore'
-while gets
-(s=PStore.new ?a).transaction{a,c,j=s[0]||[],$_.to_i,0;puts "\e[2J",(s[0]=c>0?a-[a[c-1]]:a<<$_).map{|i|"#{j+=1}: #{i}"}}
-end
+loop{t=IO.readlines(?!)rescue[]
+j=0
+puts "\ec",t.map{|g|"#{j+=1}: "<<g}
+i=gets.to_i
+i>0?t-=[t[i-1]]:t<<$_
+IO.write ?!,t.join}
